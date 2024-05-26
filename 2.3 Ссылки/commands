@@ -1,0 +1,6 @@
+touch test
+echo hello > test
+stat test
+ln test test.hardlink
+ln -s test test.softlink
+rm test

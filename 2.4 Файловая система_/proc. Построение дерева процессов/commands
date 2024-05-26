@@ -1,0 +1,17 @@
+ldd hello
+ltrace ./hello
+strace ./hello
+
+echo $$ (id текущего процесса)
+ll /proc/915018/cwd (текущая папка для pwd)
+cat environ (текущие переменные окружения)
+cat status (статистика)
+cat /proc/cpuinfo
+
+strace -c ./a.out (вызовы в таблице)
+strace -o trace.txt -e trace=read,write ./a.out
+
+pstree -p (выведет дерево процессов с пидами)
+
+(все родительские процессы)
+PID=$$; while [[ $PID -gt "0" ]]; do PID=`cat /proc/$PID/status | grep PPid | awk '{ print $2 }'`; echo $PID; done

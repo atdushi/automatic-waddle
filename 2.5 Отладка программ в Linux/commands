@@ -1,0 +1,29 @@
+ulimit -c unlimited
+gcc bug.cpp
+sudo service apport start
+sudo service apport stop
+./a.out
+
+gcc -c core.116007 ./a.out
+
+gdb ./a.out
+(gdb) b print
+(gdb) info breakpoints
+(gdb) r
+(gdb) list
+(gdb) q
+
+gcc -g3 bug.cpp (скомпилировать с большим кол-вом информации)
+gdb ./a.out
+(gdb) b print (бряка на принт)
+(gdb) info breakpoints
+(gdb) r (запуск)
+(gdb) p v (чему равна переменная v)
+(gdb) p/d v (более кравивый вид)
+(gdb) list -15 (15 строк назад)
+(gdb) b 5 (бряка на пятой строке)
+(gdb) kill
+(gdb) info breakpoints
+(gdb) bt
+(gdb) fr 1 (зашли во фрейм 1 - main)
+(gdb) fr 0 (вернулись в ближайший)

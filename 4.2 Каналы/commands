@@ -1,0 +1,7 @@
+4.2 Каналы
+
+mkfifo mypipe
+echo "hello" > mypipe
+cat mypipe
+
+ls -l mypipe

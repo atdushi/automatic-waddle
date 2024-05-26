@@ -1,0 +1,14 @@
+netstat
+netstat -anp
+
+TCP
+nc 3000 -l (сервер)
+nc localhost 3000 (клиент)
+nc localhost 3000 < file.txt
+
+UDP
+nc localhost -u 3000 -l (сервер)
+nc localhost 3000 -u (клиент)
+
+./udp
+nc 127.0.0.1 -u 1234

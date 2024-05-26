@@ -1,0 +1,3 @@
+(посмотреть shared memory)
+ipcs
+ipcs -m
